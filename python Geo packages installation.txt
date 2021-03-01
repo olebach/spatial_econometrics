@@ -1,0 +1,60 @@
+
+##========================================================================================================================================================
+## 1) Set up the environment
+
+## Create the virtual environment
+conda create -n geo_py37 python=3.7
+
+## Activate the virtual environment
+conda activate geo_py37
+
+conda config --env --add channels conda-forge
+
+## Make sure that ipykernel is installed
+conda install ipykernel
+
+## Add the new virtual environment to Jupyter
+python -m ipykernel install --user --name=geo_py37 
+
+##========================================================================================================================================================
+## 2) Install packages
+## Source: https://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+## go to folder
+cd "C:\Users\qn74bk\Python_wheels\3.7"
+
+## Install base packages
+pip install numpy‑1.20.1+mkl‑cp37‑cp37m‑win_amd64.whl
+pip install pandas‑1.2.2‑cp37‑cp37m‑win_amd64.whl
+pip install matplotlib‑3.3.4‑cp37‑cp37m‑win_amd64.whl
+pip install scipy‑1.6.1‑cp37‑cp37m‑win_amd64.whl
+pip install scikit_image‑0.18.1‑cp37‑cp37m‑win_amd64.whl
+pip install descartes‑1.1.0‑py2.py3‑none‑any.whl
+pip install GDAL‑3.2.1‑cp37‑cp37m‑win_amd64.whl
+pip install rasterio‑1.2.0‑cp37‑cp37m‑win_amd64.whl
+pip install pyproj‑3.0.0.post1‑cp37‑cp37m‑win_amd64.whl
+
+## Add environment variables:
+## The directory containing the GDAL DLL (gdal304.dll or similar) needs to be in your Windows PATH (e.g. C:\Users\qn74bk\Anaconda3\envs\geo_py37\Library\bin).
+## The gdal-data directory needs to be in your Windows PATH or the environment variable GDAL_DATA must be set (e.g. C:\Users\qn74bk\Anaconda3\envs\geo_py37\Library\share\gdal).
+## The environment variable PROJ_LIB must be set to the proj library directory (e.g. C:\Users\qn74bk\Anaconda3\envs\geo_py37\Library\include\boost\geometry\srs\projections\proj)
+
+## Install geo packages
+pip install Shapely‑1.7.1‑cp37‑cp37m‑win_amd64.whl
+pip install Fiona‑1.8.18‑cp37‑cp37m‑win_amd64.whl
+pip install Rtree‑0.9.7‑cp37‑cp37m‑win_amd64.whl
+pip install geojson‑2.5.0‑py2.py3‑none‑any.whl
+pip install pysal
+pip install geopy
+
+##========================================================================================================================================================
+## 3) Removing environments
+
+## Cloning
+conda create --name myclone --clone myenv
+
+## To remove conda environment
+conda env remove -n geo_py37
+
+## To remove the environment from Jupyter
+jupyter kernelspec uninstall geo_py37

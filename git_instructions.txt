@@ -1,0 +1,26 @@
+## Initialise git
+git init
+
+## Connect to github repo:
+git remote add <variable> <link>
+
+##==================================================================
+## Download from repository
+git pull <variable> master
+
+##==================================================================
+## Upload to repository
+Git add . 
+git commit -m <comment>
+git push -u <variable> master
+
+##==================================================================
+## Global variables
+git config –global user.email bachynsky.o@gmail.com
+git config –global user.name olebach
+
+## Branching
+git checkout -b <branch_name>
+
+
+
